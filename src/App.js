@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import StartPage from "./components/StartPage.js"
+import QuitPage from "./components/QuitPage.js"
+import PlayPage from "./components/PlayPage.js"
+
+export default function App() {
+
+    let [gameState, updateGameState] = React.useState("Start")
+
+    let displayPage = ""
+
+    function dealNewGame() {
+        updateGameState("Play")
+
+    }
+
+    function leaveTheGame() {
+        updateGameState("Quit")
+
+    }
+
+    if(gameState === "Start") {
+        displayPage = <StartPage deal={dealNewGame} quit={leaveTheGame}/>
+    }
+    else if(gameState === "Quit") {
+        displayPage = <QuitPage />
+    }
+    else if (gameState === "Play") {
+        displayPage = <PlayPage />
+    }
+
+    return(
+        <div className="App">
+            {displayPage}       
+        </div>
+    )
+
 }
-
-export default App;
