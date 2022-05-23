@@ -8,12 +8,6 @@ body{
     background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
 }
 
-
-
-button {
-    color: blue;
-}
-
 .hand {
     display: flex;
     justify-content: center;
@@ -51,7 +45,7 @@ h2{
 
 button {
     border-radius: 5px;
-    background-color: #1370c7;
+    background-color: #7eb0df;
     color: #daecfa;
     border: none;
     height: 40px;
