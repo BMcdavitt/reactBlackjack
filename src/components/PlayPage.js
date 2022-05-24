@@ -9,7 +9,7 @@ export default function PlayPage() {
         playerCards: [Math.floor(Math.random() * 13 + 1), Math.floor(Math.random() * 13 + 1)],
         handState: "Play",
         bank: 1000,
-        currentBet: 100
+        currentBet: 50
     })
 
     function dealACard(hand) {
@@ -108,6 +108,9 @@ export default function PlayPage() {
         let playerHand = handValue(gameState.playerCards)
         let newBank = gameState.bank
         let newState = gameState.handState
+        let newBet = gameState.currentBet
+
+        console.log("well I'm over here")
 
         if(dealerHandValue > 21) {
             newBank += gameState.currentBet
@@ -116,6 +119,15 @@ export default function PlayPage() {
         else if (dealerHandValue > playerHand) {
             newBank -= gameState.currentBet
             newState = "Lose"
+
+
+            console.log("well I'm here too")
+
+            if(gameState.currentBet > newBank)
+            {
+                newBet = newBank
+                console.log("well I'm here" + newBet + " " + newBank)
+            }
         }
         else if (dealerHandValue === playerHand) {
             newState = "Push"
@@ -128,7 +140,8 @@ export default function PlayPage() {
         updateGameState({...gameState, 
             dealerCards: completeHand, 
             handState: newState,
-            bank: newBank})
+            bank: newBank,
+            currentBet: newBet})
     }
 
     function newHand() {
@@ -151,6 +164,29 @@ export default function PlayPage() {
         }
         return( `( ${gameState.handState} )`)
     }
+
+    function increaseBet() {
+
+        let newBet = gameState.currentBet + 50
+
+        if(newBet > gameState.bank) {
+            newBet = gameState.bank
+        }
+
+        updateGameState({...gameState, 
+            currentBet: newBet})
+    }
+
+    function decreaseBet() {
+
+        let newBet = gameState.currentBet - 50
+        if(newBet < 0) {
+            newBet = 0
+        }
+
+        updateGameState({...gameState, 
+            currentBet: newBet})
+    }
     
 
     return (
@@ -161,7 +197,7 @@ export default function PlayPage() {
             </div>
             
             <div className="playerHand">
-                <h2>Player hand : {handValue(gameState.playerCards)} {gameStateDisplay()} Bank : {gameState.bank} Bet: 100</h2>
+                <h2>Player hand : {handValue(gameState.playerCards)} {gameStateDisplay()}</h2>
                 {playerHandDisplay}
             </div>
 
@@ -177,6 +213,15 @@ export default function PlayPage() {
                     <button onClick={newHand}>Deal</button>
                 </div>
             }
+
+            <div className="playerBank">
+                <h2>Bank : {gameState.bank} Bet: {gameState.currentBet} 
+                    &nbsp;&nbsp;
+                    <i className="arrow up" onClick={increaseBet}/>
+                    &nbsp;
+                    <i className="arrow down" onClick={decreaseBet}/>
+                </h2>
+            </div>
 
         </div>
     )
