@@ -29,13 +29,14 @@ body{
     border: 1px solid;
     margin: 5px;
     width: 35px;
-    height: 60px;
+    height: 65px;
     border-radius: 5px;
 
     background-color: #d9ebd9;
     opacity: 0.8;
     background-image: linear-gradient(to right, #c51d39, #c51d39 5px, #d9ebd9 5px, #d9ebd9 );
     background-size: 10px 100%;
+
 }
 
 h2{
