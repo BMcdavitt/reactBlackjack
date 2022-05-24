@@ -22,11 +22,15 @@ export default function App() {
 
     }
 
+    function backToStart() {
+        updateGameState("Start")
+    }
+
     if(gameState === "Start") {
         displayPage = <StartPage deal={dealNewGame} quit={leaveTheGame}/>
     }
     else if(gameState === "Quit") {
-        displayPage = <QuitPage />
+        displayPage = <QuitPage return={backToStart}/>
     }
     else if (gameState === "Play") {
         displayPage = <PlayPage />
