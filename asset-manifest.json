@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/reactBlackjack/static/css/main.3bda867c.css",
-    "main.js": "/reactBlackjack/static/js/main.db4d7579.js",
+    "main.css": "/reactBlackjack/static/css/main.e8bde4fe.css",
+    "main.js": "/reactBlackjack/static/js/main.57fdd388.js",
     "index.html": "/reactBlackjack/index.html",
-    "main.3bda867c.css.map": "/reactBlackjack/static/css/main.3bda867c.css.map",
-    "main.db4d7579.js.map": "/reactBlackjack/static/js/main.db4d7579.js.map"
+    "main.e8bde4fe.css.map": "/reactBlackjack/static/css/main.e8bde4fe.css.map",
+    "main.57fdd388.js.map": "/reactBlackjack/static/js/main.57fdd388.js.map"
   },
   "entrypoints": [
-    "static/css/main.3bda867c.css",
-    "static/js/main.db4d7579.js"
+    "static/css/main.e8bde4fe.css",
+    "static/js/main.57fdd388.js"
   ]
 }
