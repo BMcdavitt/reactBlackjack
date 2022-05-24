@@ -52,6 +52,7 @@ button {
     min-height: 40px;
     margin: 7px;
     width: 100px;
+    cursor: pointer;
 }
 
 .startButtons{
