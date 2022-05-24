@@ -110,8 +110,6 @@ export default function PlayPage() {
         let newState = gameState.handState
         let newBet = gameState.currentBet
 
-        console.log("well I'm over here")
-
         if(dealerHandValue > 21) {
             newBank += gameState.currentBet
             newState = "Win"
@@ -120,13 +118,8 @@ export default function PlayPage() {
             newBank -= gameState.currentBet
             newState = "Lose"
 
-
-            console.log("well I'm here too")
-
-            if(gameState.currentBet > newBank)
-            {
+            if(gameState.currentBet > newBank) {
                 newBet = newBank
-                console.log("well I'm here" + newBet + " " + newBank)
             }
         }
         else if (dealerHandValue === playerHand) {
@@ -151,13 +144,10 @@ export default function PlayPage() {
             handState: "Play"})
     }
 
-
     let dealerHandDisplay = showHand(gameState.dealerCards, "dealer")
     let playerHandDisplay = showHand(gameState.playerCards, "player")
 
-    //console.log("render state " + gameState.handState)
-
-    function gameStateDisplay() {
+        function gameStateDisplay() {
         if(gameState.handState === "Play")
         {
             return 
