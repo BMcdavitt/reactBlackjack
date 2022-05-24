@@ -48,9 +48,10 @@ button {
     background-color: #7eb0df;
     color: #daecfa;
     border: none;
-    height: 40px;
+    /* height: minmax(40px, auto);  */
+    min-height: 40px;
     margin: 7px;
-    width: 15%;
+    width: 100px;
 }
 
 .startButtons{
