@@ -144,6 +144,13 @@ export default function PlayPage() {
 
     //console.log("render state " + gameState.handState)
 
+    function gameStateDisplay() {
+        if(gameState.handState === "Play")
+        {
+            return 
+        }
+        return( `( ${gameState.handState} )`)
+    }
     
 
     return (
@@ -154,7 +161,7 @@ export default function PlayPage() {
             </div>
             
             <div className="playerHand">
-                <h2>Player hand : {handValue(gameState.playerCards)} ( {gameState.handState} ) Bank : {gameState.bank} Bet: 100</h2>
+                <h2>Player hand : {handValue(gameState.playerCards)} {gameStateDisplay()} Bank : {gameState.bank} Bet: 100</h2>
                 {playerHandDisplay}
             </div>
 

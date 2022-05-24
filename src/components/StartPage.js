@@ -15,7 +15,7 @@ export default function StartPage(props) {
             <h2>Let's Play Blackjack</h2>
             <div className="startButtons">
                 <button onClick={dealGame}>Deal a New Game</button>
-                <button onClick={quitGame}> I Quit</button>
+                <button onClick={quitGame}>No Thanks</button>
             </div>
         </div>
     )

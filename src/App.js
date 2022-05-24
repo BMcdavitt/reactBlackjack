@@ -1,8 +1,10 @@
 import React from "react";
+import './style.css';
 
 import StartPage from "./components/StartPage.js"
 import QuitPage from "./components/QuitPage.js"
 import PlayPage from "./components/PlayPage.js"
+
 
 export default function App() {
 
