@@ -111,18 +111,18 @@ export default function PlayPage() {
 
         if(dealerHandValue > 21) {
             newBank += gameState.currentBet
-            newState = "winner"
+            newState = "Win"
         }
         else if (dealerHandValue > playerHand) {
             newBank -= gameState.currentBet
-            newState = "loser"
+            newState = "Lose"
         }
         else if (dealerHandValue === playerHand) {
-            newState = "push"
+            newState = "Push"
         }
         else {
             newBank += gameState.currentBet
-            newState = "winner"
+            newState = "Win"
         }
 
         updateGameState({...gameState, 
