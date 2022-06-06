@@ -33,7 +33,7 @@ export default function App() {
         displayPage = <QuitPage return={backToStart}/>
     }
     else if (gameState === "Play") {
-        displayPage = <PlayPage />
+        displayPage = <PlayPage quit={leaveTheGame}/>
     }
 
     return(

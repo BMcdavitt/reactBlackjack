@@ -2,7 +2,7 @@ import React from "react";
 
 import Hand from "./Hand.js"
 
-export default function PlayPage() {
+export default function PlayPage(props) {
 
     const [gameState, updateGameState] = React.useState({
         dealerCards: [Math.floor(Math.random() * 13 + 1), Math.floor(Math.random() * 13 + 1)],
@@ -144,6 +144,10 @@ export default function PlayPage() {
             handState: "Play"})
     }
 
+    function exitGame() {
+        props.quit()
+    }
+
     let dealerHandDisplay = showHand(gameState.dealerCards, "dealer")
     let playerHandDisplay = showHand(gameState.playerCards, "player")
 
@@ -205,6 +209,7 @@ export default function PlayPage() {
             {gameState.handState !== "Play" &&
                 <div className="buttonDiv">
                     <button onClick={newHand}>Deal</button>
+                    <button onClick={exitGame}>Exit Game</button>
                 </div>
             }
 
