@@ -83,7 +83,7 @@ export default function PlayPage() {
     function showHand(hand, key) {
 
         return(
-            <div>
+            <div className="handDisplay">
                 <Hand thisHand={hand} handType={key} handState={gameState.handState} key={key}/>
             </div>
         )
@@ -180,14 +180,18 @@ export default function PlayPage() {
     
 
     return (
-        <div>
+        <div className="playTable">
             <div className="dealerHand"> 
-                <h2>Dealer hand : {gameState.handState !== "Play" && handValue(gameState.dealerCards)} </h2>
+                <div className="dealerHandInfo">
+                    <div>Dealer hand : {gameState.handState !== "Play" && handValue(gameState.dealerCards)}</div>
+                </div>
                 {dealerHandDisplay}
             </div>
             
             <div className="playerHand">
-                <h2>Player hand : {handValue(gameState.playerCards)} {gameStateDisplay()}</h2>
+                <div className="playerHandInfo">
+                    <div>Player hand : {handValue(gameState.playerCards)} {gameStateDisplay()}</div>
+                </div>
                 {playerHandDisplay}
             </div>
 
@@ -204,14 +208,12 @@ export default function PlayPage() {
                 </div>
             }
 
-            <div className="playerBank">
-                <h2>Bank : {gameState.bank} Bet: {gameState.currentBet} 
-                    &nbsp;&nbsp;
-                    <i className="arrow up" onClick={increaseBet}/>
-                    &nbsp;
-                    <i className="arrow down" onClick={decreaseBet}/>
-                </h2>
-            </div>
+                <div className="playerBank">
+                    <div>Bank : {gameState.bank}</div>
+                    <div>Bet: {gameState.currentBet}</div>
+                    <div onClick={increaseBet}>Bet More</div>
+                    <div onClick={decreaseBet}>Bet Less</div>
+                </div>
 
         </div>
     )

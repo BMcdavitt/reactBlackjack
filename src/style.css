@@ -39,17 +39,11 @@ body{
 
 }
 
-h2{
-    color: #f5e886;
-    background-color: #0d1a11;
-}
-
 button {
     border-radius: 5px;
     background-color: #7eb0df;
     color: #daecfa;
     border: none;
-    /* height: minmax(40px, auto);  */
     min-height: 40px;
     margin: 7px;
     width: 100px;
@@ -61,19 +55,26 @@ button {
     justify-content: center;
 }
 
-.arrow {
-    border: solid #f5e886;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+h2{
+    color: #f5e886;
+    background-color: #0d1a11;
+}
+
+.playerHandInfo, .dealerHandInfo, .playerBank {
+    background-color: #0d1a11;
+    color: #f5e886;
+    font-size: 24px;
+    font-weight: bold;
   }
- 
-  .up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
+
+  .playerBank {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
   }
-  
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+
+  .playerHandInfo, .dealerHandInfo {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
+
+
