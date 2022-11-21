@@ -216,8 +216,8 @@ export default function PlayPage(props) {
                 <div className="playerBank">
                     <div>Bank : {gameState.bank}</div>
                     <div>Bet: {gameState.currentBet}</div>
-                    <div onClick={increaseBet}>Bet More</div>
-                    <div onClick={decreaseBet}>Bet Less</div>
+                    <div class="action" onClick={increaseBet}>Bet More</div>
+                    <div class="action" onClick={decreaseBet}>Bet Less</div>
                 </div>
 
         </div>
