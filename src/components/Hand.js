@@ -8,7 +8,7 @@ export default function Hand(props) {
 
      for(let i=0; i<props.thisHand.length; i++)
      {
-         if((props.handState === "Play") && (props.handType === "dealer") && (i === 1)) {
+         if((props.handState === "Play") && (props.handType === "dealer") && (i === 0)) {
              handString[i] = <Card key={i}/>
          }
          else {
